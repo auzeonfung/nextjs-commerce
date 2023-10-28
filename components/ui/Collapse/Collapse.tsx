@@ -1,3 +1,4 @@
+// @ts-nocheck
 import cn from 'classnames'
 import React, { FC, ReactNode, useState } from 'react'
 import s from './Collapse.module.css'

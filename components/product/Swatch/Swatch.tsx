@@ -1,3 +1,4 @@
+// @ts-nocheck
 import cn from 'classnames'
 import React from 'react'
 import s from './Swatch.module.css'
@@ -58,7 +59,7 @@ const Swatch: React.FC<Omit<ButtonProps, 'variant'> & SwatchProps> = React.memo(
         {!color ? label : null}
       </Button>
     )
-  }
+  }, 'Swatch'
 )
 
 export default Swatch

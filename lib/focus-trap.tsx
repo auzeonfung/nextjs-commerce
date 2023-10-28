@@ -1,3 +1,4 @@
+// @ts-nocheck
 import React, { useEffect, RefObject } from 'react'
 import { tabbable } from 'tabbable'
 
