@@ -80,13 +80,14 @@ const I18nWidget: FC = () => {
               <ul>
                 {options.map((locale) => (
                   <li key={locale}>
-                    <Link href={currentPath} locale={locale}>
-                      <a
-                        className={cn(s.item)}
-                        onClick={() => setDisplay(false)}
-                      >
-                        {LOCALES_MAP[locale].name}
-                      </a>
+                    <Link
+                      href={currentPath}
+                      locale={locale}
+                      className={cn(s.item)}
+                      onClick={() => setDisplay(false)}>
+
+                      {LOCALES_MAP[locale].name}
+
                     </Link>
                   </li>
                 ))}
@@ -96,7 +97,7 @@ const I18nWidget: FC = () => {
         </div>
       </nav>
     </ClickOutside>
-  )
+  );
 }
 
 export default I18nWidget

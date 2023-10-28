@@ -71,18 +71,18 @@ const DropdownMenu: FC<DropdownMenuProps> = ({ open = false }) => {
             {LINKS.map(({ name, href }) => (
               <li key={href}>
                 <div>
-                  <Link href={href}>
-                    <a
-                      className={cn(s.link, {
-                        [s.active]: pathname === href,
-                      })}
-                      onClick={() => {
-                        setDisplay(false)
-                        closeSidebarIfPresent()
-                      }}
-                    >
-                      {name}
-                    </a>
+                  <Link
+                    href={href}
+                    className={cn(s.link, {
+                      [s.active]: pathname === href,
+                    })}
+                    onClick={() => {
+                      setDisplay(false)
+                      closeSidebarIfPresent()
+                    }}>
+
+                    {name}
+
                   </Link>
                 </div>
               </li>
@@ -119,7 +119,7 @@ const DropdownMenu: FC<DropdownMenuProps> = ({ open = false }) => {
         )}
       </div>
     </ClickOutside>
-  )
+  );
 }
 
 export default DropdownMenu

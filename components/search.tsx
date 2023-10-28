@@ -121,15 +121,13 @@ export default function Search({ categories, brands }: SearchPropsType) {
                     >
                       <Link
                         href={{ pathname: getCategoryPath('', brand), query }}
-                      >
-                        <a
-                          onClick={(e) => handleClick(e, 'categories')}
-                          className={
-                            'block lg:inline-block px-4 py-2 lg:p-0 lg:my-2 lg:mx-4'
-                          }
-                        >
+                        onClick={(e) => handleClick(e, 'categories')}
+                        className={
+                          'block lg:inline-block px-4 py-2 lg:p-0 lg:my-2 lg:mx-4'
+                        }>
+                        
                           All Categories
-                        </a>
+                        
                       </Link>
                     </li>
                     {categories.map((cat: any) => (
@@ -147,15 +145,13 @@ export default function Search({ categories, brands }: SearchPropsType) {
                             pathname: getCategoryPath(cat.path, brand),
                             query,
                           }}
-                        >
-                          <a
-                            onClick={(e) => handleClick(e, 'categories')}
-                            className={
-                              'block lg:inline-block px-4 py-2 lg:p-0 lg:my-2 lg:mx-4'
-                            }
-                          >
-                            {cat.name}
-                          </a>
+                          onClick={(e) => handleClick(e, 'categories')}
+                          className={
+                            'block lg:inline-block px-4 py-2 lg:p-0 lg:my-2 lg:mx-4'
+                          }>
+
+                          {cat.name}
+
                         </Link>
                       </li>
                     ))}
@@ -222,15 +218,13 @@ export default function Search({ categories, brands }: SearchPropsType) {
                           pathname: getDesignerPath('', category),
                           query,
                         }}
-                      >
-                        <a
-                          onClick={(e) => handleClick(e, 'brands')}
-                          className={
-                            'block lg:inline-block px-4 py-2 lg:p-0 lg:my-2 lg:mx-4'
-                          }
-                        >
+                        onClick={(e) => handleClick(e, 'brands')}
+                        className={
+                          'block lg:inline-block px-4 py-2 lg:p-0 lg:my-2 lg:mx-4'
+                        }>
+                        
                           All Designers
-                        </a>
+                        
                       </Link>
                     </li>
                     {brands.flatMap(({ node }: { node: any }) => (
@@ -249,15 +243,13 @@ export default function Search({ categories, brands }: SearchPropsType) {
                             pathname: getDesignerPath(node.path, category),
                             query,
                           }}
-                        >
-                          <a
-                            onClick={(e) => handleClick(e, 'brands')}
-                            className={
-                              'block lg:inline-block px-4 py-2 lg:p-0 lg:my-2 lg:mx-4'
-                            }
-                          >
-                            {node.name}
-                          </a>
+                          onClick={(e) => handleClick(e, 'brands')}
+                          className={
+                            'block lg:inline-block px-4 py-2 lg:p-0 lg:my-2 lg:mx-4'
+                          }>
+
+                          {node.name}
+
                         </Link>
                       </li>
                     ))}
@@ -387,15 +379,15 @@ export default function Search({ categories, brands }: SearchPropsType) {
                         }
                       )}
                     >
-                      <Link href={{ pathname, query: filterQuery({ q }) }}>
-                        <a
-                          onClick={(e) => handleClick(e, 'sort')}
-                          className={
-                            'block lg:inline-block px-4 py-2 lg:p-0 lg:my-2 lg:mx-4'
-                          }
-                        >
+                      <Link
+                        href={{ pathname, query: filterQuery({ q }) }}
+                        onClick={(e) => handleClick(e, 'sort')}
+                        className={
+                          'block lg:inline-block px-4 py-2 lg:p-0 lg:my-2 lg:mx-4'
+                        }>
+                        
                           Relevance
-                        </a>
+                        
                       </Link>
                     </li>
                     {Object.entries(SORT).map(([key, text]) => (
@@ -413,15 +405,13 @@ export default function Search({ categories, brands }: SearchPropsType) {
                             pathname,
                             query: filterQuery({ q, sort: key }),
                           }}
-                        >
-                          <a
-                            onClick={(e) => handleClick(e, 'sort')}
-                            className={
-                              'block lg:inline-block px-4 py-2 lg:p-0 lg:my-2 lg:mx-4'
-                            }
-                          >
-                            {text}
-                          </a>
+                          onClick={(e) => handleClick(e, 'sort')}
+                          className={
+                            'block lg:inline-block px-4 py-2 lg:p-0 lg:my-2 lg:mx-4'
+                          }>
+
+                          {text}
+
                         </Link>
                       </li>
                     ))}
@@ -433,7 +423,7 @@ export default function Search({ categories, brands }: SearchPropsType) {
         </div>
       </div>
     </Container>
-  )
+  );
 }
 
 Search.Layout = Layout

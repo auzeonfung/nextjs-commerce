@@ -74,11 +74,11 @@ const CartSidebarView: FC = () => {
         <>
           <div className="px-4 sm:px-6 flex-1">
             <Link href="/cart">
-              <a>
-                <Text variant="sectionHeading" onClick={handleClose}>
-                  My Cart
-                </Text>
-              </a>
+
+              <Text variant="sectionHeading" onClick={handleClose}>
+                My Cart
+              </Text>
+
             </Link>
             <ul className={s.lineItemsList}>
               {data!.lineItems.map((item: any) => (
@@ -125,7 +125,7 @@ const CartSidebarView: FC = () => {
         </>
       )}
     </SidebarLayout>
-  )
+  );
 }
 
 export default CartSidebarView

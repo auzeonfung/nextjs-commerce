@@ -21,13 +21,13 @@ const MenuSidebarView: FC<MenuProps> = (props) => {
           <ul>
             <li className={s.item}>
               <Link href="/search">
-                <a>All</a>
+                All
               </Link>
             </li>
             {props.links?.map((l: any) => (
               <li key={l.href} className={s.item}>
                 <Link href={l.href}>
-                  <a>{l.label}</a>
+                  {l.label}
                 </Link>
               </li>
             ))}
@@ -35,7 +35,7 @@ const MenuSidebarView: FC<MenuProps> = (props) => {
         </nav>
       </div>
     </SidebarLayout>
-  )
+  );
 }
 
 export default MenuSidebarView
