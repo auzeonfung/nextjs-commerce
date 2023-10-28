@@ -1,1 +1,1 @@
-export default function (_commerce: any) {}
+export default function Products(_commerce: any) {}

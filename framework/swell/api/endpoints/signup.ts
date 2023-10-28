@@ -1,1 +1,1 @@
-export default function (_commerce: any) {}
+export default function Signup(_commerce: any) {}

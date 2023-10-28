@@ -1,2 +1,2 @@
 export type WishlistItem = { product: any; id: number }
-export default function () {}
+export default function Index() {}
