@@ -22,7 +22,7 @@ export const handler: MutationHook<RemoveItemHook> = {
     return normalizeCart(cart)
   },
   useHook: ({ fetch }) =>
-    function useHook() {
+    (function useHook() {
       const { mutate } = useCart()
       return useCallback(
         async function removeItem(input) {
@@ -32,5 +32,5 @@ export const handler: MutationHook<RemoveItemHook> = {
         },
         [mutate]
       )
-    },
+    }),
 }

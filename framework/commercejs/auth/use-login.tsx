@@ -26,9 +26,9 @@ export const handler: MutationHook<LoginHook> = {
     return null
   },
   useHook: ({ fetch }) =>
-    function useHook() {
+    (function useHook() {
       return useCallback(async function login(input) {
         return fetch({ input })
       }, [])
-    },
+    }),
 }

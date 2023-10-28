@@ -34,9 +34,7 @@ export const handler = {
     return await fetch({ ...options, body: { itemId } })
   },
   useHook: ({ fetch }: MutationHookContext<RemoveItemHook>) =>
-    function useHook<T extends LineItem | undefined = undefined>(
-      ctx: { item?: T } = {}
-    ) {
+    (function useHook<T extends LineItem | undefined = undefined>(ctx: { item?: T } = {}) {
       const { item } = ctx
       const { mutate } = useCart()
       const removeItem: RemoveItemFn<LineItem> = async (input) => {
@@ -56,5 +54,5 @@ export const handler = {
       }
 
       return useCallback(removeItem as RemoveItemFn<T>, [fetch, mutate])
-    },
+    }),
 }

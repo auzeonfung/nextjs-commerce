@@ -51,7 +51,7 @@ export const handler: MutationHook<any> = {
     })
   },
   useHook: ({ fetch }: MutationHookContext<UpdateItemHook>) =>
-    function useHook<T extends LineItem | undefined = undefined>(
+    (function useHook<T extends LineItem | undefined = undefined>(
       ctx: {
         item?: T
         wait?: number
@@ -89,5 +89,5 @@ export const handler: MutationHook<any> = {
         }, ctx.wait ?? 500),
         [fetch, mutate]
       )
-    },
+    }),
 }

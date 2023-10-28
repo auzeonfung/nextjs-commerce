@@ -14,7 +14,7 @@ export const handler: SWRHook<GetCheckoutHook> = {
     method: '_',
   },
   useHook: () =>
-    function useHook() {
+    (function useHook() {
       const { cardFields, addressFields } = useCheckoutContext()
       const submit = useSubmitCheckout()
 
@@ -48,5 +48,5 @@ export const handler: SWRHook<GetCheckoutHook> = {
           }),
         [submit, response]
       )
-    },
+    }),
 }

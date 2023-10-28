@@ -66,7 +66,7 @@ export function normalizeProduct(productNode: any): Product {
       },
     },
     $unset: ['entityId'],
-  })
+  });
 }
 
 export function normalizePage(page: definitions['page_Full']): Page {

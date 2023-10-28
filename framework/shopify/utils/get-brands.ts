@@ -38,7 +38,7 @@ const getBrands = async (config: ShopifyConfig): Promise<BrandEdge[]> => {
         path: `brands/${id}`,
       },
     }
-  })
+  });
 }
 
 export default getBrands

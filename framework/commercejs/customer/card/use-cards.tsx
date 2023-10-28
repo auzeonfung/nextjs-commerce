@@ -11,7 +11,7 @@ export const handler: SWRHook<GetCardsHook> = {
     method: '_',
   },
   useHook: () =>
-    function useHook() {
+    (function useHook() {
       return useMemo(
         () =>
           Object.create(
@@ -27,5 +27,5 @@ export const handler: SWRHook<GetCardsHook> = {
           ),
         []
       )
-    },
+    }),
 }

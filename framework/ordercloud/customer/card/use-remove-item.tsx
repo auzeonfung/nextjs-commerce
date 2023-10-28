@@ -36,9 +36,7 @@ export const handler = {
     return await fetch({ ...options, body: { itemId } })
   },
   useHook: ({ fetch }: MutationHookContext<RemoveItemHook>) =>
-    function useHook<T extends Card | undefined = undefined>(
-      ctx: { item?: T } = {}
-    ) {
+    (function useHook<T extends Card | undefined = undefined>(ctx: { item?: T } = {}) {
       const { item } = ctx
       const { mutate } = useCards()
       const removeItem: RemoveItemFn<Card> = async (input) => {
@@ -58,5 +56,5 @@ export const handler = {
       }
 
       return useCallback(removeItem as RemoveItemFn<T>, [fetch, mutate])
-    },
+    }),
 }

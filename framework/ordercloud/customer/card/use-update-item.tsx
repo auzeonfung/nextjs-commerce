@@ -35,7 +35,7 @@ export const handler: MutationHook<any> = {
     })
   },
   useHook: ({ fetch }: MutationHookContext<UpdateItemHook>) =>
-    function useHook() {
+    (function useHook() {
       const { mutate } = useCards()
 
       return useCallback(
@@ -48,5 +48,5 @@ export const handler: MutationHook<any> = {
         },
         [fetch, mutate]
       )
-    },
+    }),
 }

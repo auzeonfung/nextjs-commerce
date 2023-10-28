@@ -31,7 +31,7 @@ export const handler: MutationHook<AddItemHook> = {
     return data
   },
   useHook: ({ fetch }) =>
-    function useHook() {
+    (function useHook() {
       const { mutate } = useCart()
 
       return useCallback(
@@ -44,5 +44,5 @@ export const handler: MutationHook<AddItemHook> = {
         },
         [fetch, mutate]
       )
-    },
+    }),
 }

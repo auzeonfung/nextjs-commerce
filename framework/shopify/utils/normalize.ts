@@ -49,7 +49,7 @@ const normalizeProductOption = ({
       }
       return output
     }),
-  }
+  };
 }
 
 const normalizeProductImages = ({ edges }: ImageConnection) =>
@@ -125,7 +125,7 @@ export function normalizeProduct({
     ...(description && { description }),
     ...(descriptionHtml && { descriptionHtml }),
     ...rest,
-  }
+  };
 }
 
 export function normalizeCart(checkout: Checkout): Cart {

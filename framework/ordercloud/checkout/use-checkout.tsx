@@ -13,7 +13,7 @@ export const handler: SWRHook<GetCheckoutHook> = {
     method: 'GET',
   },
   useHook: ({ useData }) =>
-    function useHook(input) {
+    (function useHook(input) {
       const submit = useSubmitCheckout()
       const response = useData({
         swrOptions: { revalidateOnFocus: false, ...input?.swrOptions },
@@ -37,5 +37,5 @@ export const handler: SWRHook<GetCheckoutHook> = {
           }),
         [response, submit]
       )
-    },
+    }),
 }

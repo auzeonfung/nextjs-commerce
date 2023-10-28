@@ -12,7 +12,7 @@ export const handler: MutationHook<AddItemHook> = {
     method: '_',
   },
   useHook: () =>
-    function useHook() {
+    (function useHook() {
       const { setAddressFields } = useCheckoutContext()
       return useCallback(
         async function addItem(input) {
@@ -21,5 +21,5 @@ export const handler: MutationHook<AddItemHook> = {
         },
         [setAddressFields]
       )
-    },
+    }),
 }

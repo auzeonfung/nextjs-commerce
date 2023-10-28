@@ -25,7 +25,7 @@ export const handler: MutationHook<SubmitCheckoutHook> = {
     return data
   },
   useHook: ({ fetch }) =>
-    function useHook() {
+    (function useHook() {
       return useCallback(
         async function onSubmitCheckout(input) {
           const data = await fetch({ input })
@@ -34,5 +34,5 @@ export const handler: MutationHook<SubmitCheckoutHook> = {
         },
         [fetch]
       )
-    },
+    }),
 }

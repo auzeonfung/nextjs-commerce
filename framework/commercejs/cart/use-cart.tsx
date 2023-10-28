@@ -20,7 +20,7 @@ export const handler: SWRHook<GetCartHook> = {
     return normalizeCart(cart)
   },
   useHook: ({ useData }) =>
-    function useHook(input) {
+    (function useHook(input) {
       const response = useData({
         swrOptions: { revalidateOnFocus: false, ...input?.swrOptions },
       })
@@ -37,5 +37,5 @@ export const handler: SWRHook<GetCartHook> = {
           }),
         [response]
       )
-    },
+    }),
 }

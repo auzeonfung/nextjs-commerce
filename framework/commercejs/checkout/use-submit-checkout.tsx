@@ -22,7 +22,7 @@ export const handler: MutationHook<SubmitCheckoutHook> = {
     return data
   },
   useHook: ({ fetch }) =>
-    function useHook() {
+    (function useHook() {
       const { cardFields, addressFields } = useCheckoutContext()
 
       return useCallback(
@@ -34,5 +34,5 @@ export const handler: MutationHook<SubmitCheckoutHook> = {
         },
         [cardFields, addressFields]
       )
-    },
+    }),
 }

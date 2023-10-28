@@ -12,7 +12,7 @@ export const handler: SWRHook<GetCardsHook> = {
     method: 'GET',
   },
   useHook: ({ useData }) =>
-    function useHook(input) {
+    (function useHook(input) {
       const response = useData({
         swrOptions: { revalidateOnFocus: false, ...input?.swrOptions },
       })
@@ -29,5 +29,5 @@ export const handler: SWRHook<GetCardsHook> = {
           }),
         [response]
       )
-    },
+    }),
 }
